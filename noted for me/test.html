@@ -1,0 +1,99 @@
+<script>
+    console.log("Hello World!");
+    let var1 = 'Selamat Pagi, ';
+    const var2 = 'Hello Bro ';
+    var var3 = 'Piye Kabare?';
+
+    let nama = 'budi';
+    let umur = 17;
+    let alamat = 'surabaya';
+    var1 = 'Selamat Malam';
+    var3 = 'Apik-apik wae';
+    console.log(var1, var2, var3);
+    let age = prompt('How old are you?', 25);
+    // let isBoss = confirm('Are you a boss?');
+    console.log(age);
+
+    if (age >= 18) {
+        console.log('saya sudah cukup umur');
+    }else {
+        console.log('saya masih dibawah umur');
+    }
+
+    let pekerjaan = prompt('Apakah pekerjaan anda?', 'mahasiswa');
+    if (pekerjaan == 'mahasiswa' && (age > 18 && age < 26)) {
+        alert(`saya seorang ${pekerjaan} dengan ${age}`);
+    }else if (pekerjaan) {
+        console.log('saya seorang', pekerjaan);
+    }else {
+        console.log('pekerjaan tidak diketahui');
+    }
+
+    const warga = ['budi', 'Andi', 'helmi'];
+    // for (let i = 0; i < warga.length; i++) {
+    //     const data = warga[i];
+    //     console.log(data);
+    // }
+
+    warga.map((f)=>{
+        console.log(f);
+    })
+
+    const newWarga = warga.filter((nama)=>{
+        if (nama.toLowerCase().startsWith('a')) {
+            return nama            
+        }
+    })
+    console.log(newWarga);
+
+    let a = prompt('angka 1')
+    let b = prompt('angka 2')
+    function penjumlahan(a,b) {
+        return parseInt(a) + parseInt(b)
+    }
+    function pengurangan(a,b) {
+        return parseInt(a) - parseInt(b)
+        
+    }
+    let hasil = penjumlahan(a,b)
+    let hasil2 = pengurangan(a,b)
+    console.log(`penjumlahan ${a} + ${b} menghasilkan ${hasil} dan pengurangan ${a} - ${b} menghasilkan ${hasil2}`);
+
+    let arr = [3, 5, 1];
+    console.log(Math.max(...arr));// spread tiga titik untuk menghitung array satu persatu
+
+    let biodata = {
+        nama1: 'budi',
+        alamat1: {
+            jalan: 'Jl. Teknik Kimia',
+            kelurahan: 'Keputih',
+            kecamatan: 'Sukolilo',
+            kota: 'Surabaya',
+            provinsi: 'Jawa Timur',
+        },
+        tglLahir: '1990/08/22',
+        cekUmur: (dateString) => {
+            var today = new Date()
+            var tglLahir = new Date(dateString)
+            var age1 = today.getFullYear() - tglLahir.getFullYear()
+            var m = today.getMonth() - tglLahir.getMonth()
+            if (m < 0|| (m === 0 && today.getDate() < tglLahir.getDate())) {
+                age1--
+            }
+            return age1
+        }
+    }
+    
+    let {nama1, ...data} = biodata // deconstruct
+    const copyBiodata = { ...biodata}
+    biodata.umur1 = biodata.cekUmur(biodata.tglLahir)
+    biodata.vaksin = true
+    console.log(data, copyBiodata, biodata);
+    console.log(biodata.cekUmur(biodata.tglLahir));
+    //hal ini dapat dipermudah dengan Lodash yaitu .clone ataupun .cloneDeep
+    const fulladdress = Object.keys(biodata.alamat1).map((key)=> {
+        return biodata.alamat1[key]
+    })
+    console.log(fulladdress.join(', '));
+    
+</script>

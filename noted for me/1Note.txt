@@ -1,0 +1,14 @@
+pembelajaran menggunakan javascript, html, css, React
+vuejs paling banyak digunakan, namun script dan template terpisah
+perbedaan vuejs lebih mirip ke laravel (balde templates) atau django template
+perbedan reactjs lebih menggunakan ke JSX
+
+JSX adalah syntac js yg sync dg html
+jquery hampir sama, namun renderingnya secara otomatis
+
+CRA hanya client site rendering dimana semua akan diproses oleh client
+Nextjs akan ada operasi pada Nodejs server
+
+TELITI DALAM IMPORT
+
+untuk mempermudah react mengubah harus menyertakan key unik agar yg berubah sesuai key uniknya
